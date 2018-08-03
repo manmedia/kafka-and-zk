@@ -1,0 +1,9 @@
+[Unit]
+Description=zookeeper.service
+AssertPathExists=/opt/kafka
+[Service]
+Environment="KAFKA_HEAP_OPTS=-Xms 1G -Xmx2G"
+Type=simple
+ExectStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+ExecStop=/opt/kafka/bin/kafka-server-stop.sh
+
